@@ -1,0 +1,108 @@
+/* KORRTO 2026 — «О фабрике». Призыв внизу — .pfp-cta из cases.css. */
+
+/* ---------- Первый экран ---------- */
+.ab-hero__head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; padding: 28px 0 clamp(32px, 3.4vw, 48px); }
+.ab-hero__title { margin: 0; font-size: clamp(56px, 7.6vw, 128px); line-height: .86; }
+.ab-hero__lead { margin: 0; font-size: clamp(17px, 1.3vw, 19px); line-height: 1.6; color: var(--ink-2); max-width: 50ch; }
+.ab-hero__media { margin: 0; height: clamp(320px, 42vw, 640px); overflow: hidden; background: var(--night); }
+.ab-hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.ab-nums { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.ab-nums li { display: flex; flex-direction: column; gap: 10px; padding: 32px 24px 32px 0; }
+.ab-nums li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+.ab-nums b { font-size: clamp(44px, 4.4vw, 72px); line-height: .9; }
+.ab-nums li:first-child b { color: var(--red); }
+.ab-nums span { font-size: 14.5px; line-height: 1.5; color: var(--ink-3); max-width: 26ch; }
+
+/* ---------- История ---------- */
+.ab-story__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px clamp(40px, 6vw, 96px); align-items: start; }
+.ab-story__grid .h2 { margin: 0; }
+.ab-story__text p { margin: 0 0 18px; font-size: 18px; line-height: 1.65; color: var(--ink-2); }
+.ab-path { list-style: none; margin: clamp(48px, 5vw, 72px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; counter-reset: p; }
+.ab-path li { position: relative; padding: 28px 24px 28px; background: var(--mist); }
+.ab-path li::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--ink); }
+.ab-path li:last-child::before { background: var(--red); }
+.ab-path .mono { display: inline-block; font-size: 13px; color: var(--red); margin-bottom: 18px; }
+.ab-path h3 { margin: 0 0 8px; font-size: 20px; font-weight: 640; }
+.ab-path p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+
+/* ---------- Что важно ---------- */
+.ab-craft { padding-top: 0; }
+.craft { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+.craft__item { padding: 24px 20px 28px 0; }
+.craft__item + .craft__item { padding-left: 20px; border-left: 1px solid var(--line); }
+.craft__item .display { display: block; font-size: 40px; line-height: 1; color: var(--red); margin-bottom: 18px; }
+.craft__item h3 { margin: 0 0 8px; font-size: 18px; font-weight: 640; }
+.craft__item p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+.ab-how { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px); align-items: center; margin-top: clamp(56px, 6vw, 96px); }
+.ab-how figure { margin: 0; aspect-ratio: 4 / 5; overflow: hidden; background: var(--stone); }
+.ab-how img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.ab-how__text .h3 { margin: 0 0 24px; }
+.ab-how__text ul { list-style: none; margin: 0 0 28px; padding: 0; border-top: 1px solid var(--line); }
+.ab-how__text li { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 16.5px; line-height: 1.5; color: var(--ink-2); }
+.ab-how__text li b { color: var(--ink); font-weight: 600; }
+.ab-how__text li svg { flex: none; width: 22px; height: 22px; color: var(--red); stroke-width: 1.5; margin-top: 1px; }
+
+/* ---------- Слово директора ---------- */
+.ab-word { background: var(--night); color: #fff; padding: clamp(64px, 8vw, 128px) 0; }
+.ab-word__grid { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: start; max-width: 1100px; }
+.ab-word__mark { font-size: clamp(120px, 14vw, 220px); line-height: .7; color: var(--red); }
+.ab-word__quote { margin: 0; }
+.ab-word blockquote { margin: 0; font-size: clamp(22px, 2.2vw, 32px); line-height: 1.4; font-weight: 440; letter-spacing: -.005em; }
+.ab-word figcaption { display: flex; flex-direction: column; gap: 4px; margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line-night); }
+.ab-word figcaption b { font-size: 18px; font-weight: 600; }
+.ab-word figcaption span { font-size: 14.5px; color: #A8A8A8; }
+
+/* ---------- Шоурум ---------- */
+.ab-show__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); align-items: stretch; }
+.ab-show__facts { margin: 32px 0 0; border-top: 1px solid var(--line); }
+.ab-show__facts div { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 16px; line-height: 1.5; }
+.ab-show__facts dt { color: var(--ink-3); }
+.ab-show__facts dd { margin: 0; }
+.ab-show__facts a { text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.ab-show__btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.ab-map { position: relative; aspect-ratio: 1; align-self: center; width: 100%; overflow: hidden; background: var(--mist); }
+.ab-map__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ab-map__pin { position: absolute; left: 58.75%; top: 37%; transform: translate(-50%, -100%); width: 52px; height: 52px; border-radius: 50% 50% 50% 0; rotate: -45deg; background: var(--red); display: grid; place-items: center; box-shadow: 0 10px 24px -8px rgba(178,45,57,.6); }
+.ab-map__pin svg { rotate: 45deg; width: 24px; height: 24px; color: #fff; }
+.ab-map__label { position: absolute; left: 58.75%; top: 39%; translate: -50% 0; margin-top: 10px; padding: 6px 12px; background: #fff; border-radius: 999px; font-size: 12.5px; white-space: nowrap; box-shadow: 0 6px 16px -10px rgba(0,0,0,.4); }
+.ab-map__metro { position: absolute; left: 37.5%; top: 70%; margin-top: 18px; translate: -50% 0; font-size: 12px; color: var(--ink-2); white-space: nowrap; }
+.ab-map__road { position: absolute; right: 16px; top: 33%; rotate: -22deg; font-size: 11.5px; color: var(--ink-3); }
+
+/* ---------- События ---------- */
+.news { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.news__item figure { margin: 0 0 16px; aspect-ratio: 1; overflow: hidden; background: var(--stone); }
+.news__item img { width: 100%; height: 100%; object-fit: cover; }
+.news__item .mono { margin: 0 0 6px; font-size: 12.5px; color: var(--ink-3); }
+.news__item h3 { margin: 0 0 8px; font-size: 20px; font-weight: 640; }
+.news__item p:last-child { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.news-list { list-style: none; margin: 40px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.news-list li { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+.news-list .mono { font-size: 13px; color: var(--ink-3); padding-top: 2px; }
+
+@media (max-width: 1024px) {
+  .ab-hero__head, .ab-story__grid, .ab-show__grid, .ab-how { grid-template-columns: 1fr; }
+  .ab-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ab-nums li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .ab-nums li:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .ab-path { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .craft { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .craft__item, .craft__item + .craft__item { padding: 22px 20px 24px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  .craft__item:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--line); }
+  .ab-how figure { aspect-ratio: 16 / 10; }
+  .ab-word__grid { grid-template-columns: 1fr; }
+  .ab-word__mark { font-size: 120px; height: 60px; }
+}
+
+@media (max-width: 767px) {
+  .ab-hero__title { font-size: 54px; }
+  .ab-nums li, .ab-nums li + li { padding: 22px 12px 22px 0; }
+  .ab-nums li:nth-child(even) { padding-left: 14px; }
+  .ab-nums b { font-size: 38px; }
+  .ab-nums span { font-size: 13px; }
+  .ab-path, .craft, .news { grid-template-columns: 1fr; }
+  .craft__item:nth-child(even) { padding-left: 0; border-left: 0; }
+  .ab-show__facts div, .news-list li { grid-template-columns: 1fr; gap: 4px; }
+  .ab-show__btns .btn { flex: 1 1 100%; justify-content: center; }
+  .ab-map { margin: 0 calc(var(--gut) * -1); width: auto; }
+  .news__item figure { aspect-ratio: 4 / 3; }
+}

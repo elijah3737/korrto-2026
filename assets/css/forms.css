@@ -1,0 +1,49 @@
+/* KORRTO 2026 — формы на светлом фоне: поля, «пилюли», загрузка файла, согласие, переключатель. Нужны оформлению заказа и брифу. */
+
+.lf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 16px; }
+.lf-grid + .lf-grid { margin-top: 18px; }
+.lf { display: flex; flex-direction: column; gap: 8px; min-width: 0; border: 0; margin: 0; padding: 0; }
+.lf--wide { grid-column: 1 / -1; }
+.lf label, .lf legend { font-size: 14px; font-weight: 500; color: var(--ink); padding: 0; }
+.lf legend { float: left; width: 100%; margin-bottom: 10px; }
+.lf legend + * { clear: both; }
+.lf__hint { font-weight: 400; color: var(--ink-3); margin-left: 4px; }
+.lf input, .lf textarea { width: 100%; height: 52px; padding: 0 16px; border: 1px solid var(--line-strong); border-radius: 10px; background: #fff; font: 400 16px var(--f-sans); color: var(--ink); transition: border-color .2s, box-shadow .2s; }
+.lf textarea { height: auto; min-height: 96px; padding: 13px 16px; resize: vertical; line-height: 1.5; }
+.lf input::placeholder, .lf textarea::placeholder { color: #9A9A9A; }
+.lf input:hover, .lf textarea:hover { border-color: var(--ink-3); }
+.lf input:focus, .lf textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(15,15,15,.08); }
+.lf.has-err input { border-color: var(--red); }
+.lf .err, .ck-submit .err { font-size: 13px; color: var(--red); min-height: 0; }
+.lf .err:empty, .ck-submit .err:empty { display: none; }
+.lf-note { display: flex; gap: 10px; align-items: flex-start; margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+.lf-note svg { flex: none; width: 18px; height: 18px; margin-top: 1px; stroke-width: 1.6; }
+.tgl { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; cursor: pointer; }
+.tgl input { position: absolute; opacity: 0; pointer-events: none; }
+.tgl__ui { position: relative; width: 46px; height: 28px; border-radius: 999px; background: var(--line-strong); transition: background-color .2s; }
+.tgl__ui::after { content: ""; position: absolute; left: 3px; top: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .25s var(--ease); }
+.tgl input:checked + .tgl__ui { background: var(--red); }
+.tgl input:checked + .tgl__ui::after { transform: translateX(18px); }
+.tgl input:focus-visible + .tgl__ui { outline: 2px solid var(--red); outline-offset: 3px; }
+.tgl > span:last-child b { display: block; font-size: 16px; font-weight: 600; }
+.tgl > span:last-child span { display: block; margin-top: 3px; font-size: 14px; color: var(--ink-3); line-height: 1.45; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pills label { cursor: pointer; }
+.pills span { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: 14.5px; transition: background-color .15s, color .15s, border-color .15s; }
+.pills span:hover { border-color: var(--ink); }
+.pills input:checked + span { background: var(--ink); border-color: var(--ink); color: #fff; }
+.drop { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border: 1.5px dashed var(--line-strong); border-radius: 12px; font-size: 14.5px; color: var(--ink-3); cursor: pointer; transition: border-color .2s, background-color .2s; }
+.drop:hover, .drop.is-over { border-color: var(--ink); background: var(--mist); }
+.drop input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.drop svg { flex: none; width: 22px; height: 22px; color: var(--ink); stroke-width: 1.6; }
+.drop b { color: var(--ink); font-weight: 600; }
+.drop.has-file { border-style: solid; border-color: var(--ink); }
+.consent--light { display: flex; gap: 12px; align-items: flex-start; margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; cursor: pointer; }
+.consent--light input { width: 19px; height: 19px; margin: 1px 0 0; accent-color: var(--red); flex: none; }
+.consent--light a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.pills input { position: absolute; opacity: 0; pointer-events: none; }
+.pills input:focus-visible + span { outline: 2px solid var(--red); outline-offset: 2px; }
+
+@media (max-width: 767px) {
+  .lf-grid { grid-template-columns: 1fr; }
+}
