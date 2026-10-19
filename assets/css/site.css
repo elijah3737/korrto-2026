@@ -218,7 +218,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 /* ---------- 04 Products rail ---------- */
 .rail-wrap { position: relative; }
-.rail { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(270px, 23vw, 318px); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: var(--gut); padding: 0 var(--gut) 8px; margin: 0 calc(var(--gut) * -1); scrollbar-width: none; }
+/* На десктопе в ширину контейнера входит целое число карточек (4 / 3 / 2), обрезки края нет; на телефоне — свайп с выглядывающей карточкой. */
+.rail { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 3 * 20px) / 4); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 0 8px; scrollbar-width: none; }
+@media (max-width: 1199px) { .rail { grid-auto-columns: calc((100% - 2 * 20px) / 3); } }
+@media (max-width: 899px) { .rail { grid-auto-columns: calc((100% - 20px) / 2); } }
 .rail::-webkit-scrollbar { display: none; }
 .rail-cta { margin-top: clamp(36px, 4vw, 56px); display: flex; justify-content: center; }
 .rail-ctrl { display: flex; gap: 8px; align-items: center; }
@@ -461,7 +464,7 @@ fieldset.field { border: 0; margin: 0 0 20px; padding: 0; min-width: 0; }
   .role__arrow { display: none; }
   .role--textile .role__note { left: 14px; right: 14px; top: 14px; font-size: 13.5px; }
   .rail-ctrl .round-btn { display: none; }
-  .rail { grid-auto-columns: 78%; gap: 14px; }
+  .rail { grid-auto-columns: 78%; gap: 14px; scroll-padding-left: var(--gut); padding: 0 var(--gut) 8px; margin: 0 calc(var(--gut) * -1); }
   .pf { display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(var(--gut) * -1); padding: 0 var(--gut); scrollbar-width: none; }
   .pf a { scroll-snap-align: start; }
   .pf__a, .pf__b, .pf__c, .pf__d, .pf__e { grid-column: auto; height: 420px; }
